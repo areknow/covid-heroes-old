@@ -1,3 +1,96 @@
 {
-  "name": "covid-heroes"
+  "name": "covid-heroes",
+  "title": "COVIDHEROES.",
+  "content": {
+    "hero": {
+      "header": "Help them, help the world.",
+      "paragraph": "America needs medical supplies. With your help we can gather enough supplies to help the medical professionals on the front line. Please help us collect items like masks, gloves, sanitizer, and more. Together we can win this. ",
+      "actions": [
+        {
+          "label": "DONATE NOW",
+          "link": ""
+        },
+        {
+          "label": "LEARN MORE",
+          "link": ""
+        }
+      ]
+    },
+    "sections": {
+      "cause": {
+        "header": "What is this for?",
+        "paragrahs": [
+          "We are partnering with local communities and volunteers to help protect healthcare workers across metro Detroit. We are here to help communities to come together during these challenging times to contribute in whatever way possible.",
+          "We are coordinating with local hospitals and urgent care centers that needs our support and help. If you are willing to donate any of the items on this list, or if you are part of a clinic that is no longer seeing patients in the office and can donate any of these items, please contact us. If you know any hospitals or urgent care centers that can use our assistance, please have them contact us. Help us spread the word within your network so we can help as many healthcare workers as possible. If there are groups that are already providing support, please let us know. We would love to partner our efforts with you and learn from their experience. We are facing a crisis never seen before and it is up to us to help the doctors and nurses any way we can."
+        ]
+      },
+      "need": {
+        "header": "What we need right now.",
+        "list": [
+          "N95 Masks (or any surgical masks)",
+          "Latex/Rubber gloves",
+          "Tissues",
+          "Hand Sanitizer",
+          "Snack bars/Protein bars",
+          "Water Bottles"
+        ]
+      },
+      "donate": {
+        "header": "How can I donate?",
+        "paragraph": "We made this process simple for people who are ready to donate the needed supplies right now. Fill out the form below and we will be in touch with next steps."
+      },
+      "contact": {
+        "header": "Contact us.",
+        "list": [
+          {
+            "type": "Phone",
+            "label": "734-237-3497",
+            "link": "tel:734-237-3497"
+          },
+          {
+            "type": "Phone",
+            "label": "734-237-3498",
+            "link": "tel:734-237-3498"
+          },
+          {
+            "type": "Email",
+            "label": "donate@covidheroes.gives",
+            "link": "mailto:donate@covidheroes.gives"
+          }
+        ]
+      }
+    },
+    "footer": {
+      "learn": {
+        "header": "LEARN MORE",
+        "links": [
+          {
+            "label": "michigan.gov/coronavirus",
+            "link": "https://michigan.gov/coronavirus"
+          },
+          {
+            "label": "Center for Disease Control",
+            "link": ""
+          },
+          {
+            "label": "World Health Organization",
+            "link": ""
+          }
+        ]
+      },
+      "about": {
+        "header": "ABOUT US",
+        "links": [
+          {
+            "label": "",
+            "link": ""
+          },
+          {
+            "label": "",
+            "link": ""
+          }
+        ]
+      }
+    }
+  }
 }
