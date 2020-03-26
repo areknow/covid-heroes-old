@@ -76,8 +76,10 @@
     <ul class="list">
       {{#each site.content.sections.need.list }}
         <li>
-          <input type="checkbox" id="checkbox-{{@index}}" value="{{ this }}">
-          <label for="checkbox-{{@index}}">{{ this }}</label>
+          <label class="primary-checkbox">
+            <input type="checkbox" value="{{ this }}">
+            <span>{{ this }}</span>
+          </label>
         </li>
       {{/each}}
     </ul>
@@ -86,8 +88,10 @@
     </div>
     <ul class="list">
       <li>
-        <input type="checkbox" id="checkbox-{{@index}}" value="{{ this }}">
-        <label for="checkbox-{{@index}}">I am interested in being a volunteer</label>
+        <label class="primary-checkbox">
+          <input type="checkbox" value="Volunteer">
+          <span>I am interested in being a volunteer</span>
+        </label>
       </li>
     </ul>
     <button type="button" class="button primary">SUBMIT</button>
