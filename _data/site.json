@@ -8,12 +8,12 @@
       "actions": [
         {
           "label": "DONATE NOW",
-          "link": "",
+          "link": "#donate",
           "type": "primary"
         },
         {
           "label": "LEARN MORE",
-          "link": "",
+          "link": "#cause",
           "type": "secondary"
         }
       ]

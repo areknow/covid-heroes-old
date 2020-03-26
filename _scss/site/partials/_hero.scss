@@ -5,10 +5,9 @@
   background-position: top;
   margin-bottom: 60px;
   .content-container {
+    height: calc(100vh - 75px);
     display: flex;
     align-items: center;
-    padding-top: 140px;
-    padding-bottom: 200px;
     h1 {
       max-width: 860px;
     }
@@ -16,7 +15,7 @@
       max-width: 860px;
       margin: 40px 0 60px 0;
     }
-    button {
+    a {
       margin-right: 30px;
       &:last-child {
         margin-right: 0;

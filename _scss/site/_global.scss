@@ -25,7 +25,7 @@ body {
   user-select: none;
 }
 .page-column {
-  max-width: 1240px;
+  max-width: 1440px;
   margin: auto;
 }
 
@@ -60,6 +60,11 @@ p {
   font-size: 24px;
   font-weight: 700;
   color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  letter-spacing: normal;
+  -webkit-appearance: button;
+  font-family: 'IBM Plex Sans', sans-serif;
   cursor: pointer;
   &:hover {
     background-color:$theme-blue-hover;

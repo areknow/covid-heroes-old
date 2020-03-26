@@ -11,7 +11,7 @@ const htmlmin = require('gulp-htmlmin');
 const rename = require("gulp-rename");
 const sass = require('gulp-sass');
 const tap = require('gulp-tap');
-const uglify = require('gulp-uglify');
+const uglify = require('gulp-uglify-es').default;
 const zip = require('gulp-zip');
 const run = require('gulp-run');
 

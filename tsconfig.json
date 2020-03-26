@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "target": "esnext",
     "module": "amd",
     "noImplicitAny": true,
     "removeComments": true,

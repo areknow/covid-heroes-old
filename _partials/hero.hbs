@@ -9,7 +9,7 @@
         <p>{{ site.content.hero.paragraph }}</p>
         <div class="actions">
           {{#each site.content.hero.actions }}
-            <button class="button {{ this.type }}">{{ this.label }}</button>
+            <a href="{{ this.link }}" class="button {{ this.type }}">{{ this.label }}</a>
           {{/each}}
         </div>
       </div>
