@@ -29,7 +29,7 @@ interface FormFieldValues {
       value: list,
     });
     console.log(values)
-    event.preventDefault();
+    // event.preventDefault();
   });
 
 })();
