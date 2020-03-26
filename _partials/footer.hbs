@@ -1,0 +1,29 @@
+<div class="footer">
+  <div class="page-column">
+    <h3>
+      {{ site.title }}
+    </h3>
+    <div class="link-groups">
+      <div>
+        <h3>{{ site.content.footer.learn.header }}</h3>
+        <ul>
+          {{#each site.content.footer.learn.links }}
+            <li>
+              <a href="#">{{ this.label }}</a>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+      <div>
+        <h3>{{ site.content.footer.about.header }}</h3>
+        <ul>
+          {{#each site.content.footer.about.links }}
+            <li>
+              <a href="#">{{ this.label }}</a>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

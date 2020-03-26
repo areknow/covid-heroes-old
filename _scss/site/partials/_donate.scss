@@ -1,0 +1,83 @@
+.donate {
+  p {
+    max-width: 1000px;
+  }
+  form {
+    max-width: 860px;
+    margin-top: 60px;
+    .row {
+      display: flex;
+      margin-bottom: 46px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      input,
+      select,
+      textarea {
+        resize: none;
+        flex-grow: 1;
+        width: 100%;
+        margin: 0 20px;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.15px;
+        color: rgba(0, 0, 0, 0.6);
+        padding: 16px;
+        border-radius: 4px;
+        border: 1px solid  rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        position: relative;
+        &:first-child {
+          margin-left: 0;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      .select {
+        position: relative;
+        margin: 0 20px;
+        flex-basis: 30%;
+        flex-shrink: 0;
+        &:after {
+          content: "";
+          position: absolute;
+          right: 24px;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          width: 0; 
+          height: 0; 
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 5px solid #000;
+        }
+      }
+    }
+    ul.list {
+      padding: 0;
+      margin: 0 0 46px 0;
+      list-style: none;
+      li {
+        margin: 0;
+        padding: 0;
+        font-size: 22px;
+        line-height: 1.09;
+        letter-spacing: 0.21px;
+        color: rgba(0, 0, 0, 0.6);
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        input {
+          margin-right: 32px;
+        }
+      }
+    }
+  }
+}

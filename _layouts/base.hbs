@@ -11,11 +11,9 @@
     <link rel="stylesheet" href="/assets/css/main.min.css" type="text/css"/>
   </head>
 
-  <body id="{{ page.name }}">
+  <body>
 
-    {{> nav}}
-
-    <main class="{{ page.name }}-page">
+    <main>
       {{{ block "content" }}}
     </main>
 

@@ -1,0 +1,18 @@
+<div class="hero">
+  <div class="page-column">
+
+    {{> nav }}
+
+    <div class="content-container">
+      <div>
+        <h1>{{ site.content.hero.header }}</h1>
+        <p>{{ site.content.hero.paragraph }}</p>
+        <div class="actions">
+          {{#each site.content.hero.actions }}
+            <button class="button {{ this.type }}">{{ this.label }}</button>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

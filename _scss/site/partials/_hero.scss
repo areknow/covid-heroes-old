@@ -1,0 +1,27 @@
+.hero {
+  background-image: url(/assets/images/hero.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  margin-bottom: 60px;
+  .content-container {
+    display: flex;
+    align-items: center;
+    padding-top: 140px;
+    padding-bottom: 200px;
+    h1 {
+      max-width: 860px;
+    }
+    p {
+      max-width: 860px;
+      margin: 40px 0 60px 0;
+    }
+    button {
+      margin-right: 30px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+}

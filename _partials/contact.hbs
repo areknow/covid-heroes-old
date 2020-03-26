@@ -1,0 +1,13 @@
+<div class="section contact page-column">
+  <h2 class="header">
+    {{ site.content.sections.contact.header }}
+  </h2>
+  <ul>
+    {{#each site.content.sections.contact.list }}
+      <li>
+        <span>{{ this.type }}: </span>
+        <a href="{{ this.link }}">{{ this.label }}</a>
+      </li>
+    {{/each}}
+  </ul>
+</div>

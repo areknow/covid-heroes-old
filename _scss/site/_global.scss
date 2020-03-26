@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,700&display=swap');
+@import 'variables';
 
 * {
   box-sizing: border-box;
@@ -17,59 +18,76 @@ body {
   padding: 0;
   margin: 0;
 }
-
-.col-wrapper {
-  font-size: 0;
-  .col {
-    display: inline-block; 
-    font-size: 14px; 
-    vertical-align: top; 
-  }
-  .one    { width: 8.3333333333%; }
-  .two    { width: 16.6666666666%; }
-  .three  { width: 24.9999999999%; }
-  .four   { width: 33.3333333333%; }
-  .five   { width: 41.6666666665%; }
-  .six    { width: 49.9999999998%; }
-  .seven  { width: 58.3333333331%; }
-  .eight  { width: 66.6666666664%; }
-  .nine   { width: 74.9999999997%; }
-  .ten    { width: 83.333333333%; }
-  .eleven { width: 91.6666666663%; }
-  .twelve { width: 100%; }
-} 
-
-.abs-center {
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-  margin: auto;
-}
 .no-select {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
-.inline {
-  display: inline-block;
-  vertical-align: middle;
-}
 .page-column {
   max-width: 1240px;
   margin: auto;
 }
-.float-right {
-  float: right;
-}
-.float-left {
-  float: left;
-}
 
-
-// Demo
 
 h1 {
-  text-align: center;
+  font-size: 120px;
+  font-weight: 700;
   margin: 0;
-  margin-top: 100px;
+  line-height: 0.9;
+}
+h2 {
+  font-size: 62px;
+  font-weight: 700;
+  margin: 0;
+}
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+p {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: $theme-blue;
+  padding: 14px 65px;
+  border: 2px solid $theme-blue;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  &:hover {
+    background-color:$theme-blue-hover;
+    border-color: $theme-blue-hover;
+  }
+}
+.button.secondary {
+  color: #000000;
+  background-color: transparent;
+  &:hover {
+    border-color: $theme-blue-hover;
+  }
+}
+
+
+.section {
+  margin-bottom: 200px;
+  .header {
+    position: relative;
+    margin-bottom: 65px;
+    &:after {
+      content: "";
+      height: 6px;
+      width: 100px;
+      background: $theme-blue;
+      left: 0;
+      bottom: -10px;
+      position: absolute;
+    }
+  }
 }

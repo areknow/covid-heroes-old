@@ -1,0 +1,31 @@
+.footer {
+  background: $theme-blue;
+  color: #fff;
+  padding: 120px 0 90px 0;
+  .page-column {
+    display: flex;
+    justify-content: space-between;
+  }
+  .link-groups {
+    display: flex;
+    div {
+      margin-right: 100px;
+      &:last-child {
+        margin-right: 0;
+      }
+      ul {
+        list-style: none;
+        margin: 40px 0 0 0;
+        padding: 0;
+        li {
+          margin-bottom: 20px;
+          font-size: 20px;
+          a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
