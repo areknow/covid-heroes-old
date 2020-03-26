@@ -3,20 +3,20 @@
     {{ site.content.sections.donate.header }}
   </h2>
   <p>{{ site.content.sections.donate.paragraph }}</p>
-  <form>
+  <form id="form" name="donate" method="POST" data-netlify="true">
     <div class="row">
-      <input placeholder="First Name" type="text" required autocomplete="given-name">
-      <input placeholder="Last Name" type="text" autocomplete="family-name">
-      <input placeholder="Phone Number" type="text" autocomplete="tel">
+      <input placeholder="Name" type="text" autocomplete="given-name" name="firstName">
+      <input placeholder="Last Name" type="text" autocomplete="family-name" name="lastName">
+      <input placeholder="Phone Number" type="text" autocomplete="tel" name="phone">
     </div>
     <div class="row">
-      <input placeholder="Email" type="email" autocomplete="email">
-      <input placeholder="Street Address" type="text" autocomplete="shipping street-address">
+      <input placeholder="Email" type="email" autocomplete="email" name="email">
+      <input placeholder="Street Address" type="text" autocomplete="street-address" name="street">
     </div>
     <div class="row">
-      <input placeholder="City" type="text" autocomplete="shipping locality">
+      <input placeholder="City" type="text" autocomplete="address-level2" name="city">
       <span class="select">
-        <select autocomplete="shipping postal-code">
+        <select autocomplete="address-level1" name="state">
           <option value="AL">Alabama</option>
           <option value="AK">Alaska</option>
           <option value="AZ">Arizona</option>
@@ -71,29 +71,29 @@
           <option value="Other">Other</option>
         </select>
       </span>
-      <input placeholder="Zip Code" type="text" autocomplete="shipping postal-code">
+      <input placeholder="Zip Code" type="text" autocomplete="postal-code">
     </div>
     <ul class="list">
       {{#each site.content.sections.need.list }}
         <li>
           <label class="primary-checkbox">
-            <input type="checkbox" value="{{ this }}">
+            <input type="checkbox" value="{{ this }}" name="list">
             <span>{{ this }}</span>
           </label>
         </li>
       {{/each}}
     </ul>
     <div class="row">
-      <textarea rows="8" placeholder="Please let us know if you have other items to donate."></textarea>
+      <textarea rows="8" placeholder="Please let us know if you have other items to donate." name="other"></textarea>
     </div>
     <ul class="list">
       <li>
         <label class="primary-checkbox">
-          <input type="checkbox" value="Volunteer">
+          <input type="checkbox" value="true" name="volunteer">
           <span>I am interested in being a volunteer</span>
         </label>
       </li>
     </ul>
-    <button type="button" class="button primary">SUBMIT</button>
+    <button type="submit" class="button primary">SUBMIT</button>
   </form>
 </div>

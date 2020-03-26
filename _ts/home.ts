@@ -6,6 +6,11 @@
 
 import * as $ from 'jquery';
 
+interface FormFieldValues {
+  name: string;
+  value: string | string[];
+}
+
 (() => {
 
   /**
@@ -13,6 +18,18 @@ import * as $ from 'jquery';
    */
   $(() => {
     console.log('home');
+  });
+
+  $('#form').submit(function(event) {
+    const fields = $(this).serializeArray();
+    const list = fields.filter(item => item.name === 'list').map(item => item.value);
+    const values: FormFieldValues[] = fields.filter(item => item.name !== 'list');
+    values.push({
+      name: 'list',
+      value: list,
+    });
+    console.log(values)
+    event.preventDefault();
   });
 
 })();
