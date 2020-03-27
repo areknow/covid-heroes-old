@@ -10,10 +10,9 @@ import * as $ from 'jquery';
       item.addEventListener('click', (event) => {
         const hashval = item.getAttribute('href');
         const target = document.querySelector(hashval);
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+        $('html, body').animate({
+          scrollTop: $(target).offset().top
+        }, 1000);
         history.pushState(null, null, '');
         event.preventDefault();
       });
