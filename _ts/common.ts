@@ -14,7 +14,7 @@ import * as $ from 'jquery';
           behavior: 'smooth',
           block: 'start'
         });
-        history.pushState(null, null, hashval);
+        history.pushState(null, null, '');
         event.preventDefault();
       });
     }
