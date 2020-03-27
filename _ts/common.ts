@@ -1,5 +1,7 @@
 import * as $ from 'jquery';
 
+const SCROLL_OFFSET = 60;
+
 (() => {
 
   $(() => {
@@ -11,7 +13,7 @@ import * as $ from 'jquery';
         const hashval = item.getAttribute('href');
         const target = document.querySelector(hashval);
         $('html, body').animate({
-          scrollTop: $(target).offset().top
+          scrollTop: $(target).offset().top - SCROLL_OFFSET
         }, 1000);
         history.pushState(null, null, '');
         event.preventDefault();
