@@ -21,6 +21,7 @@ interface FormFieldValues {
       name: 'list',
       value: list,
     });
+    console.log(JSON.stringify(values))
     $.post("https://covidheroes.gives/.netlify/functions/email", values).then(() => {
       $('#form button').text('THANK YOU').prop('disabled', true);
       $('#form').addClass('disabled');

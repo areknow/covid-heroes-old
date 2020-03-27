@@ -4,6 +4,7 @@ const receiver = "arnaudcrowther@gmail.com";
 
 exports.handler = function(event, context, callback) {
   const data = JSON.parse(event.body);
+  console.log(data)
   const firstName = data.find(item => item.name === 'firstName').value;
   const lastName = data.find(item => item.name === 'lastName').value;
   const phone = data.find(item => item.name === 'phone').value;
@@ -12,7 +13,7 @@ exports.handler = function(event, context, callback) {
   const city = data.find(item => item.name === 'city').value;
   const state = data.find(item => item.name === 'state').value;
   const other = data.find(item => item.name === 'other').value;
-  const volunteer = data.find(item => item.name === 'volunteer').value;
+  const volunteer = data.find(item => item.name === 'volunteer');
   const list = data.find(item => item.name === 'list').value.join(', ');
 
   client.transmissions.send({
@@ -24,7 +25,7 @@ exports.handler = function(event, context, callback) {
       subject: "New donation form submitted",
       html:`
         <html><body>
-          <h2>New form submission<h2>
+          <h2>New form submission</h2>
           <table style="width:100%">
           <tr>
             <td>First name</td>
@@ -64,7 +65,7 @@ exports.handler = function(event, context, callback) {
           </tr>
           <tr>
             <td>Volunteer</td>
-            <td>${volunteer}</td>
+            <td>${volunteer ? volunteer.value : 'false'}</td>
           </tr>
           </table>
         </body></html>
