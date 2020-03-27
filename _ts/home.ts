@@ -13,9 +13,9 @@ interface FormFieldValues {
 
 (() => {
 
-  $('#form').submit(function(event) {
+  $('#form button').click(() => {
     event.preventDefault();
-    const fields = $(this).serializeArray();
+    const fields = $('#form').serializeArray();
     const list = fields.filter(item => item.name === 'list').map(item => item.value);
     const values: FormFieldValues[] = fields.filter(item => item.name !== 'list');
     values.push({
@@ -23,16 +23,11 @@ interface FormFieldValues {
       value: list,
     });
     console.log(JSON.stringify(values))
+    console.log(values)
     $.post("https://covidheroes.gives/.netlify/functions/email", { payload: values }).then(() => {
       $('#form button').text('THANK YOU').prop('disabled', true);
       $('#form').addClass('disabled');
     })
-    .done(function(done) {
-      console.log(done)
-    })
-    .fail(function(error) {
-      console.log(error)
-    });
   });
 
 })();
