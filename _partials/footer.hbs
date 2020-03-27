@@ -9,7 +9,7 @@
         <ul>
           {{#each site.content.footer.learn.links }}
             <li>
-              <a href="#">{{ this.label }}</a>
+              <a href="{{ this.link }}" target="_blank">{{ this.label }}</a>
             </li>
           {{/each}}
         </ul>
@@ -19,7 +19,7 @@
         <ul>
           {{#each site.content.footer.about.links }}
             <li>
-              <a href="#">{{ this.label }}</a>
+              <a href="{{ this.link }}" target="_blank">{{ this.label }}</a>
             </li>
           {{/each}}
         </ul>

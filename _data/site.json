@@ -72,11 +72,11 @@
           },
           {
             "label": "Center for Disease Control",
-            "link": ""
+            "link": "https://www.cdc.gov/coronavirus/2019-ncov/index.html"
           },
           {
             "label": "World Health Organization",
-            "link": ""
+            "link": "https://www.who.int/health-topics/coronavirus"
           }
         ]
       },
@@ -84,12 +84,12 @@
         "header": "ABOUT US",
         "links": [
           {
-            "label": "Mission Statement",
-            "link": ""
+            "label": "Privacy Policy",
+            "link": "/privacy"
           },
           {
             "label": "Terms and Conditions",
-            "link": ""
+            "link": "/terms"
           }
         ]
       }
