@@ -22,7 +22,7 @@ interface FormFieldValues {
       value: list,
     });
     console.log(JSON.stringify(values))
-    $.post("https://covidheroes.gives/.netlify/functions/email", values).then(() => {
+    $.post("https://covidheroes.gives/.netlify/functions/email", { payload: values }).then(() => {
       $('#form button').text('THANK YOU').prop('disabled', true);
       $('#form').addClass('disabled');
     });
