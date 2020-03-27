@@ -2,9 +2,7 @@ const SparkPost = require("sparkpost");
 const client = new SparkPost(process.env.SPARKPOST);
 
 exports.handler = function(event, context, callback) {
-  console.log(event.body)
-  // callback(null, {statusCode: 200, body: JSON.stringify({ msg: 'done' })});
-
+  const data = JSON.parse(event.body);
   const firstName = data.find(item => item.name === 'firstName').value;
   const lastName = data.find(item => item.name === 'lastName').value;
   const phone = data.find(item => item.name === 'phone').value;
@@ -24,7 +22,8 @@ exports.handler = function(event, context, callback) {
       from: "COVIDHEROES.<form@mail.covidheroes.gives>",
       subject: "New donation form submitted",
       html:`
-        <html><body><p>
+        <html><body>
+          <h2>New form submission<h2>
           <table style="width:100%">
           <tr>
             <td>First name</td>
@@ -67,7 +66,7 @@ exports.handler = function(event, context, callback) {
             <td>${volunteer}</td>
           </tr>
           </table>
-        </p></body></html>
+        </body></html>
       `
     },
     recipients: [{ address: "arnaudcrowther@gmail.com" }]
