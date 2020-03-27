@@ -25,6 +25,12 @@ interface FormFieldValues {
     $.post("https://covidheroes.gives/.netlify/functions/email", { payload: values }).then(() => {
       $('#form button').text('THANK YOU').prop('disabled', true);
       $('#form').addClass('disabled');
+    })
+    .done(function(done) {
+      console.log(done)
+    })
+    .fail(function(error) {
+      console.log(error)
     });
     event.preventDefault();
   });
