@@ -1,6 +1,6 @@
 const SparkPost = require("sparkpost");
 const client = new SparkPost(process.env.SPARKPOST);
-const receiver = "arnaudcrowther@gmail.com";
+const receiver = "donate@covidcovidheroes.gives";
 
 exports.handler = function(event, context, callback) {
   const data = JSON.parse(event.body);
