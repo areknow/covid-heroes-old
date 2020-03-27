@@ -3,6 +3,7 @@ const client = new SparkPost(process.env.SPARKPOST);
 
 exports.handler = function(event, context, callback) {
   console.log(event.body)
+  // console.log(event.body.payload.data)
 
   callback(null, {statusCode: 200, body: JSON.stringify({ msg: 'done' })});
 
