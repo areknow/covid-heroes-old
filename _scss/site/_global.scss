@@ -77,6 +77,11 @@ p {
     border-color: $theme-blue-hover;
   }
 }
+.button:disabled {
+  opacity: .4;
+  background-color: grey;
+  border-color: grey;
+}
 
 
 .section {

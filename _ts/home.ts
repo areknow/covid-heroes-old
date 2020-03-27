@@ -22,7 +22,8 @@ interface FormFieldValues {
       value: list,
     });
     $.post("https://covidheroes.gives/.netlify/functions/email", values).then(() => {
-      alert("Thank you!");
+      $('#form button').text('THANK YOU').prop('disabled', true);
+      $('#form').addClass('disabled');
     });
     event.preventDefault();
   });

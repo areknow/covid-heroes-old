@@ -1,5 +1,6 @@
 const SparkPost = require("sparkpost");
 const client = new SparkPost(process.env.SPARKPOST);
+const receiver = "arnaudcrowther@gmail.com";
 
 exports.handler = function(event, context, callback) {
   const data = JSON.parse(event.body);
@@ -69,7 +70,7 @@ exports.handler = function(event, context, callback) {
         </body></html>
       `
     },
-    recipients: [{ address: "arnaudcrowther@gmail.com" }]
+    recipients: [{ address: receiver }]
   })
   .then(data => {
     console.log(data);
