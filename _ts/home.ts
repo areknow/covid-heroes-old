@@ -22,11 +22,10 @@ interface FormFieldValues {
       name: 'list',
       value: list,
     });
-    console.log(values)
     $.post("https://covidheroes.gives/.netlify/functions/email", JSON.stringify(values)).then(() => {
       $('#form button').text('THANK YOU').prop('disabled', true);
       $('#form').addClass('disabled');
-    })
+    });
   });
 
 })();
