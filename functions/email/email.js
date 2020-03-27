@@ -3,34 +3,87 @@ const client = new SparkPost(process.env.SPARKPOST);
 
 exports.handler = function(event, context, callback) {
   console.log(event.body)
-  // console.log(event.body.payload.data)
+  // callback(null, {statusCode: 200, body: JSON.stringify({ msg: 'done' })});
 
-  callback(null, {statusCode: 200, body: JSON.stringify({ msg: 'done' })});
+  const firstName = data.find(item => item.name === 'firstName').value;
+  const lastName = data.find(item => item.name === 'lastName').value;
+  const phone = data.find(item => item.name === 'phone').value;
+  const email = data.find(item => item.name === 'email').value;
+  const street = data.find(item => item.name === 'street').value;
+  const city = data.find(item => item.name === 'city').value;
+  const state = data.find(item => item.name === 'state').value;
+  const other = data.find(item => item.name === 'other').value;
+  const volunteer = data.find(item => item.name === 'volunteer').value;
+  const list = data.find(item => item.name === 'list').value.join(', ');
 
-  // client.transmissions.send({
-  //   options: {
-  //     sandbox: false
-  //   },
-  //   content: {
-  //     from: "COVIDHEROES.<form@mail.covidheroes.gives>",
-  //     subject: "New donation form submitted",
-  //     html:
-  //       "<html><body><p>Testing SparkPost - the world's most awesomest email service!</p></body></html>"
-  //   },
-  //   recipients: [{ address: "arnaudcrowther@gmail.com" }]
-  // })
-  // .then(data => {
-  //   console.log(data);
-  //   callback(null, {
-  //     statusCode: 200,
-  //     body: JSON.stringify({ msg: data })
-  //   });
-  // })
-  // .catch(err => {
-  //   console.log(err);
-  //   callback(null, {
-  //     statusCode: 500,
-  //     body: JSON.stringify({ msg: err })
-  //   });
-  // });
+  client.transmissions.send({
+    options: {
+      sandbox: false
+    },
+    content: {
+      from: "COVIDHEROES.<form@mail.covidheroes.gives>",
+      subject: "New donation form submitted",
+      html:`
+        <html><body><p>
+          <table style="width:100%">
+          <tr>
+            <td>First name</td>
+            <td>${firstName}</td>
+          </tr>
+          <tr>
+            <td>Last name</td>
+            <td>${lastName}</td>
+          </tr>
+          <tr>
+            <td>Phone</td>
+            <td>${phone}</td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td>${email}</td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td>${street}</td>
+          </tr>
+          <tr>
+            <td>City</td>
+            <td>${city}</td>
+          </tr>
+          <tr>
+            <td>State</td>
+            <td>${state}</td>
+          </tr>
+          <tr>
+            <td>Donation items</td>
+            <td>${list}</td>
+          </tr>
+          <tr>
+            <td>Other items</td>
+            <td>${other}</td>
+          </tr>
+          <tr>
+            <td>Volunteer</td>
+            <td>${volunteer}</td>
+          </tr>
+          </table>
+        </p></body></html>
+      `
+    },
+    recipients: [{ address: "arnaudcrowther@gmail.com" }]
+  })
+  .then(data => {
+    console.log(data);
+    callback(null, {
+      statusCode: 200,
+      body: JSON.stringify({ msg: data })
+    });
+  })
+  .catch(err => {
+    console.log(err);
+    callback(null, {
+      statusCode: 500,
+      body: JSON.stringify({ msg: err })
+    });
+  });
 };
