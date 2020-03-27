@@ -24,7 +24,8 @@ body {
   user-select: none;
 }
 .page-column {
-  max-width: 1440px;
+  max-width: 1520px;
+  padding: 0 40px;
   margin: auto;
 }
 
@@ -49,54 +50,4 @@ p {
   font-size: 24px;
   font-weight: 400;
   margin: 0;
-}
-
-.button {
-  border-radius: 4px;
-  background-color: $theme-blue;
-  padding: 14px 65px;
-  border: 2px solid $theme-blue;
-  font-size: 24px;
-  font-weight: 700;
-  color: #fff;
-  text-decoration: none;
-  display: inline-block;
-  letter-spacing: normal;
-  -webkit-appearance: button;
-  font-family: 'IBM Plex Sans', sans-serif;
-  cursor: pointer;
-  &:hover {
-    background-color:$theme-blue-hover;
-    border-color: $theme-blue-hover;
-  }
-}
-.button.secondary {
-  color: #000000;
-  background-color: transparent;
-  &:hover {
-    border-color: $theme-blue-hover;
-  }
-}
-.button:disabled {
-  opacity: .4;
-  background-color: grey;
-  border-color: grey;
-}
-
-
-.section {
-  margin-bottom: 200px;
-  .header {
-    position: relative;
-    margin-bottom: 65px;
-    &:after {
-      content: "";
-      height: 6px;
-      width: 100px;
-      background: $theme-blue;
-      left: 0;
-      bottom: -10px;
-      position: absolute;
-    }
-  }
 }
