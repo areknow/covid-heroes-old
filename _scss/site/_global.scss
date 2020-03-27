@@ -6,6 +6,9 @@
 
 html {
   line-height: initial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 body {
   background-color: #ffffff;
@@ -50,4 +53,29 @@ p {
   font-size: 24px;
   font-weight: 400;
   margin: 0;
+}
+
+
+@media(max-width: $size-medium) {
+  h1 {
+    font-size: 90px;
+  }
+}
+
+@media(max-width: $size-small) {
+  .page-column {
+    max-width: unset;
+    padding: 0 20px;
+  }
+  h1 {
+    font-size: 44px;
+    line-height: 1.1;
+  }
+  h2 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  p {
+    font-size: 16px;
+  }
 }

@@ -6,3 +6,13 @@
     }
   }
 }
+
+
+
+@media(max-width: $size-small) {
+  .cause {
+    p {
+      margin-bottom: 24px;
+    }
+  }
+}

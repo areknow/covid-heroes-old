@@ -16,3 +16,16 @@
     }
   }
 }
+
+
+
+
+@media(max-width: $size-small) {
+  .contact {
+    ul {
+      li {
+        font-size: 16px;
+      }
+    }
+  }
+}

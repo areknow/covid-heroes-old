@@ -9,7 +9,7 @@
   text-decoration: none;
   display: inline-block;
   letter-spacing: normal;
-  -webkit-appearance: button;
+  -webkit-appearance: none;
   font-family: 'IBM Plex Sans', sans-serif;
   cursor: pointer;
   &:hover {
@@ -56,6 +56,28 @@
       left: 0;
       bottom: -10px;
       position: absolute;
+    }
+  }
+}
+
+
+
+
+
+@media(max-width: $size-small) {
+  .button {
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    padding: 13px;
+  }
+  .section {
+    margin-bottom: 60px;
+    .header {
+      margin-bottom: 12px;
+      &:after {
+        display: none;
+      }
     }
   }
 }

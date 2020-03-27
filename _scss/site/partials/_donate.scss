@@ -94,3 +94,46 @@
 
 
 
+
+@media(max-width: $size-small) {
+  .donate {
+    p {
+      max-width: 1000px;
+    }
+    form {
+      max-width: 860px;
+      margin-top: 30px;
+      .row {
+        display: block;
+        margin-bottom: 0;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        input,
+        select,
+        textarea {
+          margin: 0;
+          margin-bottom: 20px;
+          padding: 12px 16px;
+        }
+        .select {
+          display: block;
+          margin: 0;
+          flex-basis: unset;
+          flex-shrink: unset;
+          &:after {
+            bottom: 18px;
+          }
+        }
+      }
+      ul.list {
+        margin-top: 10px;
+        margin-bottom: 30px;
+        li {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+
+}
