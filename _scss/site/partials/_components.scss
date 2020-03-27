@@ -24,6 +24,18 @@
     border-color: $theme-blue-hover;
   }
 }
+.button.negative {
+  color: #000;
+  border-color: #fff;
+  background-color: #fff;
+  &:hover {
+    border-color: #fff;
+  }
+}
+.button.negative.secondary {
+  background-color: transparent;
+  color: #fff;
+}
 .button:disabled {
   opacity: .4;
   background-color: grey;
