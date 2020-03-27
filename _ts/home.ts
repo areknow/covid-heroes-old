@@ -14,6 +14,7 @@ interface FormFieldValues {
 (() => {
 
   $('#form').submit(function(event) {
+    event.preventDefault();
     const fields = $(this).serializeArray();
     const list = fields.filter(item => item.name === 'list').map(item => item.value);
     const values: FormFieldValues[] = fields.filter(item => item.name !== 'list');
@@ -32,7 +33,6 @@ interface FormFieldValues {
     .fail(function(error) {
       console.log(error)
     });
-    event.preventDefault();
   });
 
 })();
