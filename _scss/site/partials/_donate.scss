@@ -36,6 +36,10 @@
         &:last-child {
           margin-right: 0;
         }
+        &.error {
+          border-color: $error-red;
+          box-shadow: 0 0 2px $error-red;
+        }
       }
       .select {
         position: relative;
@@ -79,6 +83,12 @@
       pointer-events: none;
       opacity: .4;
     }
+  }
+  .form-error {
+    margin-top: 60px;
+    display: none;
+    font-size: 30px;
+    color: $error-red;
   }
 }
 
