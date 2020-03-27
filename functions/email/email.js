@@ -3,6 +3,7 @@ const client = new SparkPost(process.env.SPARKPOST);
 const receiver = "arnaudcrowther@gmail.com";
 
 exports.handler = function(event, context, callback) {
+  const data = JSON.parse(event.body);
   const firstName = data.find(item => item.name === 'firstName').value;
   const lastName = data.find(item => item.name === 'lastName').value;
   const phone = data.find(item => item.name === 'phone').value;
