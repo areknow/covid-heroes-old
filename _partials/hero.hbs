@@ -1,4 +1,4 @@
-<div class="hero">
+<div id="hero" class="hero">
   <div class="page-column">
 
     {{> nav }}
@@ -9,7 +9,7 @@
         <p>{{ site.content.hero.paragraph }}</p>
         <div class="actions">
           {{#each site.content.hero.actions }}
-            <a href="{{ this.link }}" class="button {{ this.type }} negative">{{ this.label }}</a>
+            <button id="action" data-key="{{ this.key }}" class="button {{ this.type }} negative">{{ this.label }}</button>
           {{/each}}
         </div>
       </div>

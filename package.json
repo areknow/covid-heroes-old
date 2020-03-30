@@ -6,6 +6,7 @@
   "scripts": {
     "start": "gulp watch",
     "build": "gulp build",
+    "server": "netlify dev",
     "tsc": "./node_modules/typescript/bin/tsc"
   },
   "author": "Arnaud P. Crowther",

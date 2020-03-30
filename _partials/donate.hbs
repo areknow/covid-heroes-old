@@ -10,20 +10,20 @@
     <div class="page-column">
       <form id="form">
         <div class="block">
-          <h3>Are you donating medical equipment, or are you requesting some?</h3>
+          <h3>Are you donating medical equipment, or are you requesting it?</h3>
           <ul class="list">
             <li>
               <label class="radio-container">
-                <input type="radio" name="radio">
+                <input type="radio" name="type" value="donate">
                 <span class="radio"></span>
                 <div class="label">I have equipment to donate</div>
               </label>
             </li>
             <li>
               <label class="radio-container">
-                <input type="radio" name="radio">
+                <input type="radio" name="type" value="request">
                 <span class="radio"></span>
-                <div class="label">I am requesting medical equipment </div>
+                <div class="label">I am requesting medical equipment</div>
               </label>
             </li>
           </ul>
@@ -33,14 +33,14 @@
           <ul class="list">
             <li>
               <label class="checkbox-container">
-                <input type="checkbox" value="true" name="volunteer">
+                <input type="checkbox" value="volunteer" name="volunteer">
                 <span class="checkbox"></span>
-                <div class="label">I am interested in being a volunteer. (if you don't have any PPEs or need any PPEs but still want to contribute in the logistics please check the box.)</div>
+                <div class="label">I am interested in being a volunteer. (if you don't have any PPEs or need any PPEs but still want to contribute in the logistics please check the box)</div>
               </label>
             </li>
           </ul>
         </div>
-        <div class="block">
+        <div id="fields" class="block">
           <h3>Please fill out some basic information so we can get in touch.</h3>
           <div class="row">
             <input placeholder="First Name" type="text" autocomplete="given-name" name="firstName" required>
@@ -110,11 +110,11 @@
                 <option value="Other">Other</option>
               </select>
             </span>
-            <input placeholder="Zip Code" type="text" autocomplete="postal-code">
+            <input placeholder="Zip Code" type="text" autocomplete="postal-code" name="zip">
           </div>
         </div>
-        <div class="block">
-          <h3>Please check the boxes indicating what items you have to donate XXXX.</h3>
+        <div id="items" class="block">
+          <h3>Please check the boxes indicating what items you are <span id="requestType">donating</span>.</h3>
           <ul class="list">
             {{#each site.content.sections.need.list }}
               <li>
@@ -127,13 +127,12 @@
             {{/each}}
           </ul>
           <div class="row">
-            <textarea rows="8" placeholder="Please let us know if you have other items to donate XXXX." name="other"></textarea>
+            <textarea rows="8" placeholder="Please let us know if you have other items you would like to donate." name="other"></textarea>
           </div>
-          <button type="submit" class="button primary">SUBMIT</button>
         </div>
+        <button id="submit" type="submit" class="button primary">SUBMIT</button>
       </form>
     </div>
-
   </div>
   <div class="page-column form-error">
     An error occured. Please refresh the page and try again.

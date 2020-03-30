@@ -7,14 +7,14 @@
       "paragraph": "America needs medical supplies. With your help we can gather enough supplies to help the medical professionals on the front line. Please help us collect items like masks, gloves, sanitizer, and more. Together we can win this. ",
       "actions": [
         {
-          "label": "DONATE NOW",
-          "link": "#donate",
-          "type": "primary"
+          "label": "DONATE EQUIPMENT",
+          "type": "primary",
+          "key": "donate"
         },
         {
-          "label": "LEARN MORE",
-          "link": "#cause",
-          "type": "secondary"
+          "label": "REQUEST EQUIPMENT",
+          "type": "secondary",
+          "key": "request"
         }
       ]
     },
@@ -23,7 +23,7 @@
         "header": "What is this for?",
         "paragraphs": [
           "We are partnering with local communities and volunteers to help protect healthcare workers across metro Detroit. We are here to help communities to come together during these challenging times to contribute in whatever way possible.",
-          "We are coordinating with local hospitals and urgent care centers that needs our support and help. If you are willing to donate any of the items on this list, or if you are part of a clinic that is no longer seeing patients in the office and can donate any of these items, please contact us. If you know any hospitals or urgent care centers that can use our assistance, please have them contact us. Help us spread the word within your network so we can help as many healthcare workers as possible. If there are groups that are already providing support, please let us know. We would love to partner our efforts with you and learn from their experience. We are facing a crisis never seen before and it is up to us to help the doctors and nurses any way we can."
+          "We are coordinating with local hospitals and urgent care centers that need our support and help. If you are willing to donate any of the items on this list, or if you are part of a clinic that is no longer seeing patients in the office and can donate any of these items, please contact us. If you know any hospitals or urgent care centers that can use our assistance, please have them contact us. Help us spread the word within your network so we can help as many healthcare workers as possible. If there are groups that are already providing support, please let us know. We would love to partner our efforts with you and learn from their experience. We are facing a crisis never seen before and it is up to us to help the doctors and nurses any way we can."
         ]
       },
       "need": {

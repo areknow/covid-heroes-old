@@ -16,7 +16,7 @@
       max-width: 860px;
       margin: 40px 0 60px 0;
     }
-    a {
+    .button {
       margin-right: 30px;
       &:last-child {
         margin-right: 0;
@@ -60,7 +60,7 @@
         font-size: 23px;
         line-height: 1.13;
       }
-      a {
+      .button {
         margin-right: 0;
         margin-bottom: 30px;
         &:last-child {

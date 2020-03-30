@@ -242,4 +242,14 @@
   .checkbox-container {
     padding-left: 41px;
   }
+  .radio-container .label,
+  .checkbox-container .label {
+    font-size: 16px;
+  }
+  .radio {
+    top: -2px;
+  }
+  .checkbox {
+    top: 1px;
+  }
 }
