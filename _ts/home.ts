@@ -1,10 +1,5 @@
 import * as $ from 'jquery';
 
-interface FormFieldValues {
-  name: string;
-  value: string | string[];
-}
-
 const ENDPOINT: string = '/.netlify/functions/email';
 
 let ATTEMPTED = false;
@@ -17,7 +12,7 @@ const SCROLL_OFFSET = 60;
 
 (() => {
 
-  // tslint:disable-next-line: only-arrow-functions
+  // CTA click action
   $('#hero #action').click(function(event) {
     $('html, body').animate({
       scrollTop: $('#donate').offset().top - SCROLL_OFFSET
@@ -33,6 +28,7 @@ const SCROLL_OFFSET = 60;
     }
   });
 
+  // Radio type listener
   $('#form input[name="type"]').change(() => {
     const value = $('input[name="type"]:checked').val() as string;
     if (value === 'donate') {
@@ -45,12 +41,14 @@ const SCROLL_OFFSET = 60;
     switchForm();
   });
 
+  // Volunteer checkbox listener
   $('#form input[name="volunteer"]').change(() => {
     const value = $('input[name="volunteer"]:checked').val() as string;
     value === 'volunteer' ? VOLUNTEER = true : VOLUNTEER = false;
     switchForm();
   });
 
+  // Form submit action
   $('#form button').click((event) => {
     event.preventDefault();
     ATTEMPTED = true;
@@ -59,6 +57,7 @@ const SCROLL_OFFSET = 60;
     }
   });
 
+  // Form input change listener
   $('#form input').change(() => {
     if (ATTEMPTED) {
       formValidation($('#form input:required'));
@@ -67,20 +66,26 @@ const SCROLL_OFFSET = 60;
 
 })();
 
+/**
+ * Switch form actions - the form is modified based on the different selected variables
+ */
 function switchForm() {
   let placeholder = '';
   let label = '';
   if (VOLUNTEER) {
     $('#form #fields').show();
     $('#form #submit').show();
+    $('#form #orgName').hide();
   }
   if (REQUEST) {
     label = 'requesting';
     placeholder = 'request';
+    $('#form #orgName').show();
   }
   if (DONATE) {
     label = 'donating';
     placeholder = 'donate';
+    $('#form #orgName').hide();
   }
   if (DONATE || REQUEST) {
     $('#form #requestType').text(label);
@@ -96,6 +101,9 @@ function switchForm() {
   }
 }
 
+/**
+ * Form processing - data collection and POST submission to server
+ */
 async function processForm() {
   let type = '';
   if (DONATE && !REQUEST) {
@@ -115,6 +123,7 @@ async function processForm() {
     type,
     first: find('firstName'),
     last: find('lastName'),
+    org: find('orgName'),
     email: find('email'),
     phone: find('phone'),
     street: find('street'),
@@ -125,6 +134,7 @@ async function processForm() {
     volunteer: VOLUNTEER ? 'Yes' : 'No',
     list: list.length ? list.join(', ') : 'N/A',
   };
+  // POST to lambda function
   try {
     await $.post(ENDPOINT, JSON.stringify(data));
     $('#form button').text('THANK YOU').prop('disabled', true);
@@ -135,14 +145,22 @@ async function processForm() {
   }
 }
 
+/**
+ * Find helper - scans the form for the requested field name
+ * @param key: the name of the form input
+ */
 function find(key: string) {
   const $form = $('#form');
   return $form.find(`[name=${key}]`).val() || 'N/A';
 }
 
-function formValidation(elemClass: JQuery<HTMLElement>) {
+/**
+ * Form validataion helper - checks required attributes and blocks form submission
+ * @param element: the input that needs to be checked
+ */
+function formValidation(element: JQuery<HTMLElement>) {
   let valid = true;
-  for (const elem of $(elemClass)) {
+  for (const elem of $(element)) {
     if ($(elem).val() === '' || $(elem).val() === null) {
       $(elem).addClass('error');
       valid = false;

@@ -26,6 +26,10 @@
           &:last-child {
             margin-bottom: 0;
           }
+          #orgName {
+            display: none;
+            margin-bottom: 0;
+          }
           input,
           select,
           textarea {

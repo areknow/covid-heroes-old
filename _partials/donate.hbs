@@ -42,9 +42,12 @@
         </div>
         <div id="fields" class="block">
           <h3>Please fill out some basic information so we can get in touch.</h3>
+          <div id="orgName" class="row">
+            <input placeholder="Organization Name" type="text" name="orgName">
+          </div>
           <div class="row">
-            <input placeholder="First Name" type="text" autocomplete="given-name" name="firstName" required>
-            <input placeholder="Last Name" type="text" autocomplete="family-name" name="lastName" required>
+            <input id="firstName" placeholder="First Name" type="text" autocomplete="given-name" name="firstName" required>
+            <input id="lastName" placeholder="Last Name" type="text" autocomplete="family-name" name="lastName" required>
             <input placeholder="Phone Number" type="tel" autocomplete="tel" pattern="^[0-9]{3,45}$" name="phone" required>
           </div>
           <div class="row">

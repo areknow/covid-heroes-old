@@ -1,6 +1,7 @@
 {
   "extends": ["tslint:latest"],
   "rules": {
-    "semicolon": true
+    "semicolon": true,
+    "only-arrow-functions": false
   }
 }

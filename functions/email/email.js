@@ -10,6 +10,9 @@ exports.handler = async function(event, context, callback) {
     <html><body>
       <h2>New ${data.type} form submitted</h2>
       <table style="width:100%">
+      <tr style="display: ${ data.org == 'N/A' ? 'none' : 'table-row' }">
+        <td>Organization</td><td>${data.org}</td>
+      </tr>
       <tr>
         <td>First name</td><td>${data.first}</td>
       </tr>
